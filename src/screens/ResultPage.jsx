@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   StyleSheet,
@@ -6,13 +7,16 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import AppButton from '../components/AppButton';
 
 export default function ResultScreen(props) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../assets/logo.png')} 
+          source={require('../assets/logo.png')}
           style={styles.logo}
         />
         <Text style={styles.title}>NutriApp</Text>
@@ -37,9 +41,11 @@ export default function ResultScreen(props) {
           nutricionista para um acompanhamento personalizado.
         </Text>
 
-        <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("HomePage")}>
-          <Text style={styles.buttonText}>Voltar para o Início</Text>
-        </TouchableOpacity>
+        <AppButton
+          navigation={navigation}
+          route={{ name: 'homePage' }}
+          buttonTitle="Voltar ao início"
+        />
       </View>
     </View>
   );

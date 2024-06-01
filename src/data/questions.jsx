@@ -1,52 +1,52 @@
 export const data = [
     {
         question: "Quantos copos de água você bebe por dia?",
-        options: ["Não bebo muita água;", "Menos de quatro copos;", "c) Mais de cinco copos."],
-        anwser: "Hamilton"
+        options: ["Não bebo muita água", "Menos de quatro copos", "Mais de cinco copos"],
+        anwser: ""
     },
     {
         question: "Quantas vezes por dia você come? (conte também os lanches da manhã e da tarde)",
-        options: ["Norris", "Perez", "Hulkenberg", "Magnussen"],
-        anwser: "Hulkenberg"
+        options: ["Uma ou duas vezes por dia", "De três a quatro vezes por dia", "Mais de cinco vezes por dia"],
+        anwser: ""
     },
     {
-        question: "Qual pista ficou marcada por um fim de semana com duas mortes?",
-        options: ["Imola", "Suzuka", "Monza", "Bahrein"],
-        anwser: "Imola"
+        question: "Como costuma ser seu café da manhã??",
+        options: ["Café preto e no máximo um biscoitinho", "Café com leite, pão branco, margarina, queijo e presunto", "Frutas e sucos naturais, cereais integrais,tapioca, pão integral"],
+        anwser: ""
     },
     {
-        question: "Qual dessas equipes não está no grid?",
-        options: ["Sauber", "Ferrari", "RBR", "Williams"],
-        anwser: "Sauber"
+        question: "Qual é, em média, a quantidade de frutas que você consome por dia?",
+        options: ["Não como frutas nem bebo suco natural de frutas todos os dias", "Três unidades", "Duas ou menos unidades"],
+        anwser: ""
     },
     {
-        question: "Desses pilotos, qual não dirigiu pela Ferrari?",
-        options: ["Hamilton", "Schumacher", "Vettel", "Sainz"],
+        question: "O que você leva de lanche para a escola/trabalho?",
+        options: ["Não levo nenhum tipo de lanche", "Chocolates, pães, bolachas recheadas, salgadinhos, refrigerante", "Frutas, iogurte, barrinha de cereal, sanduíche de pão integral"],
         anwser: "Hamilton"
     },
     {
-        question: "Quantas corridas acontecem na Itália?",
-        options: ["1", "2", "3", "4"],
-        anwser: "2"
+        question: "Você consome algum tipo de verdura ou legume todos os dias:",
+        options: ["Não consumo verdura nem legumes", "Duas ou menos vezes por semana", "Todos os dias"],
+        anwser: ""
     },
     {
-        question: "Quantas equipes tem no grid atual?",
-        options: ["12", "15", "18", "10"],
-        anwser: "10"
+        question: "Quantas vezes por semana você come carne vermelha?",
+        options: ["Todos os dias", "Não consumo carne vermelha", "Duas vezes ou mais"],
+        anwser: ""
     },
     {
-        question: "Qual o piloto mais velho do grid??",
-        options: ["Vettel", "Hamilton", "Alonso", "Raikkonen"],
-        anwser: "Alonso"
+        question: "Quantas vezes por semana você pratica atividades físicas?",
+        options: ["Todos os dias", "Duas vezes ou mais", "Não pratico nenhuma atividade física"],
+        anwser: ""
     },
     {
-        question: "Qual o nome do Gp que acontece no Brasil?",
-        options: ["GP de São Paulo", "Gp do Brasil", "GP da América do Sul", "GP de Interlagos"],
-        anwser: "GP de São Paulo"
+        question: "Qual tipo de gordura é mais utilizado na sua casa para cozinhar os alimentos?",
+        options: ["Gordura animal ou manteiga", "Óleos vegetais (óleo de soja, girassol, algodão,canola)", "Margarina ou gordura vegetal"],
+        anwser: ""
     },
     {
-        question: "Qual o nome da organização responsável pela Fórmula 1?",
-        options: ["FIFA", "FEA", "UEFA", "FIA"],
-        anwser: "FIA"
+        question: "Você costuma tomar refrigerantes com qual frequência?",
+        options: ["Não tomo refrigerantes", "Três ou menos vezes por semana", "Todos os dias"],
+        anwser: ""
     },
 ]

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
     StyleSheet,
@@ -6,8 +7,11 @@ import {
     Image,
     TouchableOpacity,
 } from 'react-native';
+import AppButton from '../components/AppButton';
 
 export default function QuestionScreen(props) {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -37,11 +41,11 @@ export default function QuestionScreen(props) {
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={() => props.navigation.navigate("resultPage")}>
-                        <Text style={styles.buttonText}>Começar o Quiz</Text>
-                    </TouchableOpacity>
+                    <AppButton
+                        navigation={navigation}
+                        route={{ name: 'resultPage' }}
+                        buttonTitle="Próxima pergunta"
+                    />
                 </View>
             </View>
         </View>

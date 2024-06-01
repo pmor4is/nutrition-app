@@ -6,8 +6,13 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import AppButton from '../components/AppButton';
+import { useNavigation } from '@react-navigation/native';
 
 export default function HomeScreen(props) {
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -29,11 +34,11 @@ export default function HomeScreen(props) {
         /> */}
       </View>
 
-      <TouchableOpacity 
-        style={styles.button} 
-        onPress={() => props.navigation.navigate("questionsPage")}>
-        <Text style={styles.buttonText}>Começar o Quiz</Text>
-      </TouchableOpacity>
+      <AppButton
+        navigation={navigation}
+        route={{ name: 'questionsPage' }}
+        buttonTitle="Começar o quiz"
+      />
     </View>
   );
 };
@@ -74,16 +79,5 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 200,
     resizeMode: 'contain',
-  },
-  button: {
-    backgroundColor: '#4CAF50', // Verde vibrante
-    padding: 15,
-    borderRadius: 10,
-    margin: 20,
-  },
-  buttonText: {
-    fontSize: 18,
-    color: '#FFFFFF', // Branco
-    textAlign: 'center',
   },
 });
