@@ -13,7 +13,7 @@ export default function HomeScreen(props) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../assets/logo.png')} // Substitua pela sua logo
+          source={require('../assets/logo.png')} 
           style={styles.logo}
         />
         <Text style={styles.title}>NutriApp</Text>
@@ -25,7 +25,7 @@ export default function HomeScreen(props) {
           impactam sua saúde e aprenda dicas para uma vida mais saudável.
         </Text>
         {/* <Image
-          source={require('./assets/prato_saudavel.png')} // Substitua pela sua imagem
+          source={require('./assets/prato_saudavel.png')} 
           style={styles.image}
         /> */}
       </View>
