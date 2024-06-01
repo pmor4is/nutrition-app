@@ -1,16 +1,37 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     StyleSheet,
     Text,
     View,
     Image,
-    TouchableOpacity,
 } from 'react-native';
+
 import AppButton from '../components/AppButton';
+import { QuestionsData } from '../data/QuestionsData';
+import OptionBox from '../components/OptionBox';
 
 export default function QuestionScreen(props) {
     const navigation = useNavigation();
+
+    const [question, setQuestion] = useState([]);
+    const [index, setIndex] = useState(0);
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    useEffect(() => {
+        setQuestion(QuestionsData)
+    }, [])
+
+    let currentQuestion = question[index];
+
+    const nextQuestion = () => {
+        if (index < question?.length - 1) {
+            setIndex((i) => i + 1);
+            setSelectedOption(null);
+        } else {
+            navigation.navigate("resultPage")
+        }
+    }
 
     return (
         <View style={styles.container}>
@@ -24,26 +45,32 @@ export default function QuestionScreen(props) {
 
             <View style={styles.content}>
                 <Text style={styles.question}>
-                    Quantos copos de água você bebe por dia?
+                    {currentQuestion?.question}
                 </Text>
 
                 <View style={styles.options}>
-                    <TouchableOpacity style={styles.option} onPress={() => { }}>
-                        <Text style={styles.optionText}>a) Não bebo muita água;</Text>
-                    </TouchableOpacity>
+                    <OptionBox
+                        optionTitle={currentQuestion?.options[0]}
+                        onPress={() => setSelectedOption(0)}
+                        isSelected={selectedOption === 0}
+                    />
+                    <OptionBox
+                        optionTitle={currentQuestion?.options[1]}
+                        onPress={() => setSelectedOption(1)}
+                        isSelected={selectedOption === 1}
+                        
+                    />
 
-                    <TouchableOpacity style={styles.option} onPress={() => { }}>
-                        <Text style={styles.optionText}>b) Menos de quatro copos;</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.option} onPress={() => { }}>
-                        <Text style={styles.optionText}>c) Mais de cinco copos.</Text>
-                    </TouchableOpacity>
+                    <OptionBox
+                        optionTitle={currentQuestion?.options[2]}
+                        onPress={() => setSelectedOption(2)}
+                        isSelected={selectedOption === 2}
+                    />
                 </View>
                 <View>
                     <AppButton
                         navigation={navigation}
-                        route={{ name: 'resultPage' }}
+                        onPress={nextQuestion}
                         buttonTitle="Próxima pergunta"
                     />
                 </View>
@@ -88,26 +115,5 @@ const styles = StyleSheet.create({
     },
     options: {
         width: '100%',
-    },
-    option: {
-        backgroundColor: '#FFFFFF', // Branco
-        padding: 15,
-        marginVertical: 5,
-        borderRadius: 10,
-    },
-    optionText: {
-        fontSize: 16,
-        color: '#00BCD4', // Azul claro
-    },
-    button: {
-        backgroundColor: '#4CAF50', // Verde vibrante
-        padding: 15,
-        borderRadius: 10,
-        margin: 20,
-    },
-    buttonText: {
-        fontSize: 18,
-        color: '#FFFFFF', // Branco
-        textAlign: 'center',
     },
 });

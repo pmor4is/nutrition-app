@@ -1,4 +1,4 @@
-export const data = [
+export const QuestionsData = [
     {
         question: "Quantos copos de água você bebe por dia?",
         options: ["Não bebo muita água", "Menos de quatro copos", "Mais de cinco copos"],

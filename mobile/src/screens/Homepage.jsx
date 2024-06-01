@@ -4,7 +4,6 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity,
 } from 'react-native';
 import AppButton from '../components/AppButton';
 import { useNavigation } from '@react-navigation/native';
@@ -36,8 +35,8 @@ export default function HomeScreen(props) {
 
       <AppButton
         navigation={navigation}
-        route={{ name: 'questionsPage' }}
         buttonTitle="Começar o quiz"
+        onPress={() => navigation.navigate("questionsPage")}
       />
     </View>
   );

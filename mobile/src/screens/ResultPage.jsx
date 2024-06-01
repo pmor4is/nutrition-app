@@ -5,7 +5,6 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity,
 } from 'react-native';
 import AppButton from '../components/AppButton';
 
@@ -43,8 +42,8 @@ export default function ResultScreen(props) {
 
         <AppButton
           navigation={navigation}
-          route={{ name: 'homePage' }}
           buttonTitle="Voltar ao início"
+          onPress={() => navigation.navigate("homePage")}
         />
       </View>
     </View>
@@ -105,16 +104,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
     color: '#FFFFFF', // Branco
-  },
-  button: {
-    backgroundColor: '#4CAF50', // Verde vibrante
-    padding: 15,
-    borderRadius: 10,
-    margin: 20,
-  },
-  buttonText: {
-    fontSize: 18,
-    color: '#FFFFFF', // Branco
-    textAlign: 'center',
   },
 });
