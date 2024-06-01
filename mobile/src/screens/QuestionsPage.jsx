@@ -105,6 +105,7 @@ export default function QuestionScreen(props) {
                         navigation={navigation}
                         onPress={nextQuestion}
                         buttonTitle="Próxima pergunta"
+                        disabled={selectedOption === null}
                     />
                 </View>
                 {/* TESTE TESTE */}

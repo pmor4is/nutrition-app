@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
         color: '#FFFFFF', // Branco
         textAlign: 'center',
     },
+    disabledButton: {
+        backgroundColor: '#ccc', // Cor desabilitada
+    },
 })
 
 export default styles;
