@@ -6,16 +6,20 @@ import Homepage from './src/screens/Homepage';
 import QuestionsPage from './src/screens/QuestionsPage';
 import ResultPage from './src/screens/ResultPage';
 
+import { QuestionsProvider } from './src/context/QuestionsContext';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-      <NavigationContainer>
+    <NavigationContainer>
+      <QuestionsProvider>
         <Stack.Navigator>
           <Stack.Screen name='homePage' component={Homepage} />
           <Stack.Screen name='questionsPage' component={QuestionsPage} />
           <Stack.Screen name='resultPage' component={ResultPage} />
         </Stack.Navigator>
-      </NavigationContainer>
+      </QuestionsProvider>
+    </NavigationContainer>
   )
 }
