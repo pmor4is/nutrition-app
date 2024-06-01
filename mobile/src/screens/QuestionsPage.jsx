@@ -2,35 +2,13 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useContext, useEffect, useState } from 'react';
 import { Text, View, Image } from 'react-native';
 
-import { QuestionsData } from '../data/QuestionsData';
 import AppButton from '../components/AppButton';
 import OptionBox from '../components/OptionBox';
 
-import styles from './styles/QuestionsPageStyle'
-
-// TESTE
+import { QuestionsData } from '../data/QuestionsData';
 import { QuestionsContext } from '../context/QuestionsContext'; // Importe o contexto
 
-const DebugContext = () => {
-  const { data } = useContext(QuestionsContext);
-
-  return (
-    <View>
-      <Text>Estado do Contexto:</Text>
-      <Text>answer1: {data.answer1}</Text>
-      <Text>answer2: {data.answer2}</Text>
-      <Text>answer3: {data.answer3}</Text>
-      <Text>answer4: {data.answer4}</Text>
-      <Text>answer5: {data.answer5}</Text>
-      <Text>answer6: {data.answer6}</Text>
-      <Text>answer7: {data.answer7}</Text>
-      <Text>answer8: {data.answer8}</Text>
-      <Text>answer9: {data.answer9}</Text>
-      <Text>answer10: {data.answer10}</Text>
-    </View>
-  );
-};
-// Fim do test
+import styles from './styles/QuestionsPageStyle'
 
 export default function QuestionScreen(props) {
     const navigation = useNavigation();
@@ -83,23 +61,23 @@ export default function QuestionScreen(props) {
 
                 <View style={styles.options}>
                     <OptionBox
-                        optionTitle={currentQuestion?.options[0]}
+                        optionTitle={currentQuestion?.options[0].text}
                         onPress={() => setSelectedOption(0)}
                         isSelected={selectedOption === 0}
                     />
                     <OptionBox
-                        optionTitle={currentQuestion?.options[1]}
+                        optionTitle={currentQuestion?.options[1].text}
                         onPress={() => setSelectedOption(1)}
                         isSelected={selectedOption === 1}
                         
                     />
-
                     <OptionBox
-                        optionTitle={currentQuestion?.options[2]}
+                        optionTitle={currentQuestion?.options[2].text}
                         onPress={() => setSelectedOption(2)}
                         isSelected={selectedOption === 2}
                     />
                 </View>
+                
                 <View>
                     <AppButton
                         navigation={navigation}
@@ -108,9 +86,6 @@ export default function QuestionScreen(props) {
                         disabled={selectedOption === null}
                     />
                 </View>
-                {/* TESTE TESTE */}
-                <DebugContext />
-                {/* TESTE TESTE */}
             </View>
         </View>
     );

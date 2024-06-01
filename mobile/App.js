@@ -14,7 +14,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <QuestionsProvider>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false, // Define headerShown como false
+          }}
+        >
           <Stack.Screen name='homePage' component={Homepage} />
           <Stack.Screen name='questionsPage' component={QuestionsPage} />
           <Stack.Screen name='resultPage' component={ResultPage} />

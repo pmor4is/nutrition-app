@@ -1,52 +1,82 @@
 export const QuestionsData = [
     {
         question: "Quantos copos de água você bebe por dia?",
-        options: ["Não bebo muita água", "Menos de quatro copos", "Mais de cinco copos"],
-        anwser: ""
+        options: [
+            {text: "Não bebo muita água", weight: 0},
+            {text: "Menos de quatro copos", weight: 1},
+            {text: "Mais de cinco copos", weight: 3}
+        ],
     },
     {
         question: "Quantas vezes por dia você come? (conte também os lanches da manhã e da tarde)",
-        options: ["Uma ou duas vezes por dia", "De três a quatro vezes por dia", "Mais de cinco vezes por dia"],
-        anwser: ""
+        options: [
+            {text: "Uma ou duas vezes por dia", weight: 0},
+            {text: "De três a quatro vezes por dia", weight: 1},
+            {text: "Mais de cinco vezes por dia", weight: 3}
+        ],
     },
     {
         question: "Como costuma ser seu café da manhã??",
-        options: ["Café preto e no máximo um biscoitinho", "Café com leite, pão branco, margarina, queijo e presunto", "Frutas e sucos naturais, cereais integrais,tapioca, pão integral"],
-        anwser: ""
+        options: [
+            {text: "Café preto e no máximo um biscoitinho", weight: 0},
+            {text: "Café com leite, pão branco, margarina, queijo e presunto", weight: 2},
+            {text: "Frutas e sucos naturais, cereais integrais, tapioca, pão integral", weight: 3}
+        ],
     },
     {
         question: "Qual é, em média, a quantidade de frutas que você consome por dia?",
-        options: ["Não como frutas nem bebo suco natural de frutas todos os dias", "Três unidades", "Duas ou menos unidades"],
-        anwser: ""
+        options: [
+            {text: "Não como frutas nem bebo suco natural de frutas todos os dias", weight: 0},
+            {text: "Três unidades", weight: 3},
+            {text: "Duas ou menos unidades", weight: 1}
+        ],
     },
     {
         question: "O que você leva de lanche para a escola/trabalho?",
-        options: ["Não levo nenhum tipo de lanche", "Chocolates, pães, bolachas recheadas, salgadinhos, refrigerante", "Frutas, iogurte, barrinha de cereal, sanduíche de pão integral"],
-        anwser: "Hamilton"
+        options: [
+            {text: "Não levo nenhum tipo de lanche", weight: 0},
+            {text: "Chocolates, pães, bolachas recheadas, salgadinhos, refrigerante", weight: 1},
+            {text: "Frutas, iogurte, barrinha de cereal, sanduíche de pão integral", weight: 3}
+        ],
     },
     {
         question: "Você consome algum tipo de verdura ou legume todos os dias:",
-        options: ["Não consumo verdura nem legumes", "Duas ou menos vezes por semana", "Todos os dias"],
-        anwser: ""
+        options: [
+            {text: "Não consumo verdura nem legumes", weight: 0},
+            {text: "Duas ou menos vezes por semana", weight: 2},
+            {text: "Todos os dias", weight: 3}
+        ],
     },
     {
         question: "Quantas vezes por semana você come carne vermelha?",
-        options: ["Todos os dias", "Não consumo carne vermelha", "Duas vezes ou mais"],
-        anwser: ""
+        options: [
+            {text: "Todos os dias", weight: 1},
+            {text: "Não consumo carne vermelha", weight: 0},
+            {text: "Duas vezes ou mais", weight: 3}
+        ],
     },
     {
         question: "Quantas vezes por semana você pratica atividades físicas?",
-        options: ["Todos os dias", "Duas vezes ou mais", "Não pratico nenhuma atividade física"],
-        anwser: ""
+        options: [
+            {text: "Todos os dias", weight: 3},
+            {text: "Duas vezes ou mais", weight: 2},
+            {text: "Não pratico nenhuma atividade física", weight: 0}
+        ],
     },
     {
         question: "Qual tipo de gordura é mais utilizado na sua casa para cozinhar os alimentos?",
-        options: ["Gordura animal ou manteiga", "Óleos vegetais (óleo de soja, girassol, algodão,canola)", "Margarina ou gordura vegetal"],
-        anwser: ""
+        options: [
+            {text: "Gordura animal ou manteiga", weight: 0},
+            {text: "Óleos vegetais (óleo de soja, girassol, algodão,canola)", weight: 3},
+            {text: "Margarina ou gordura vegetal", weight: 1}
+        ],
     },
     {
         question: "Você costuma tomar refrigerantes com qual frequência?",
-        options: ["Não tomo refrigerantes", "Três ou menos vezes por semana", "Todos os dias"],
-        anwser: ""
+        options: [
+            {text: "Não tomo refrigerantes", weight: 3},
+            {text: "Três ou menos vezes por semana", weight: 1},
+            {text: "Todos os dias", weight: 0}
+        ],
     },
 ]

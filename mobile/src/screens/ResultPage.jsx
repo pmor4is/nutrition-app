@@ -5,31 +5,15 @@ import AppButton from '../components/AppButton';
 
 import styles from './styles/ResultPageStyle';
 import { QuestionsContext } from '../context/QuestionsContext';
+import { calculateTotalScore } from '../controller/ScoreController';
 
-const DebugContext = () => {
-  const { data } = useContext(QuestionsContext);
-
-  return (
-    <View>
-      <Text>Estado do Contexto:</Text>
-      <Text>answer1: {data.answer1}</Text>
-      <Text>answer2: {data.answer2}</Text>
-      <Text>answer3: {data.answer3}</Text>
-      <Text>answer4: {data.answer4}</Text>
-      <Text>answer5: {data.answer5}</Text>
-      <Text>answer6: {data.answer6}</Text>
-      <Text>answer7: {data.answer7}</Text>
-      <Text>answer8: {data.answer8}</Text>
-      <Text>answer9: {data.answer9}</Text>
-      <Text>answer10: {data.answer10}</Text>
-    </View>
-  );
-};
 
 export default function ResultScreen(props) {
   const navigation = useNavigation();
 
-  const {data} = useContext(QuestionsContext);
+  const { data } = useContext(QuestionsContext);
+
+  const feedbackText = calculateTotalScore(data);
 
   return (
     <View style={styles.container}>
@@ -50,8 +34,7 @@ export default function ResultScreen(props) {
             style={styles.resultImage}
           /> */}
           <Text style={styles.resultText}>
-            Parabéns! Você mostrou que sabe cuidar da sua saúde fazendo escolhas
-            inteligentes e equilibradas.
+            {feedbackText}
           </Text>
         </View>
 
@@ -66,7 +49,6 @@ export default function ResultScreen(props) {
           onPress={() => navigation.navigate("homePage")}
         />
       </View>
-      <DebugContext />
     </View>
   );
 };
