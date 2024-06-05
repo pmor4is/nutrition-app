@@ -7,7 +7,7 @@ const client = new Client(conString);
 client.connect(function (error) {
     if (error) {
         return console.error("Unable to connect to database. Error", error);
-    } client.query('SELECT NOW()', function (erro, results) {
+    } client.query('SELECT NOW()', function (error, results) {
         if (error) {
             return console.error('Error executing the query. Error', error);
         }

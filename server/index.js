@@ -14,7 +14,7 @@ app.use(bodyparser.json());
 app.use("/questions", questionsRoute);
 
 
-app.get("/" , (req, res) => {
+app.get("/", (req, res) => {
     console.log("Response ok");
     res.send("Server connected");
 });
