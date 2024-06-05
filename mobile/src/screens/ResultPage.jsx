@@ -72,9 +72,7 @@ export default function ResultScreen(props) {
         <AppButton
           navigation={navigation}
           buttonTitle="Voltar ao início"
-          onPress={() => {
-            navigation.navigate("homePage")
-          }}
+          onPress={() => {navigation.navigate("homePage")}}
         />
       </View>
     </View>
