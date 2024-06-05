@@ -71,7 +71,7 @@ export default function ResultScreen(props) {
         </Text>
 
         <Text>{data.answer1} TIPO: {typeof data.answer1}</Text>
-        <Text>{data.answer1} TIPO: {typeof data.answer1}</Text>
+        <Text>{data.answer2} TIPO: {typeof data.answer2}</Text>
 
         <AppButton
           navigation={navigation}
