@@ -3,6 +3,7 @@ const { Client } = require("pg");
 const cors = require("cors");
 const bodyparser = require("body-parser");
 const config = require("./config");
+const questionsRoute = require('./routes/questions');
 
 const app = express();
 
@@ -10,20 +11,8 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyparser.json());
 
-var conString = config.urlConnection;
-var client = new Client(conString);
+app.use("/questions", questionsRoute);
 
-client.connect((error) => {
-    if (error) {
-        return console.error('Not able to connect. Error: ', error);
-    }
-    client.query('SELECT NOW()', (error, result) => {
-        if (error) {
-            return console.error('Not able to query. Error: ', error);
-        }
-        console.log(result.rows[0]);
-    })
-})
 
 app.get("/" , (req, res) => {
     console.log("Response ok");
@@ -31,3 +20,4 @@ app.get("/" , (req, res) => {
 });
 
 app.listen(config.port, () => console.log("Server listening on port: " + config.port));
+module.exports = app;
