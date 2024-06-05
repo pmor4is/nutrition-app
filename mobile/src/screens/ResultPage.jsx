@@ -1,14 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useContext, useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
-import AppButton from '../components/AppButton';
 
 import styles from './styles/ResultPageStyle';
+import AppButton from '../components/AppButton';
 import { QuestionsContext } from '../context/QuestionsContext';
 import { calculateTotalScore } from '../controller/ScoreController';
 
 import axios from 'axios';
-
 
 export default function ResultScreen(props) {
   const navigation = useNavigation();
@@ -70,15 +69,11 @@ export default function ResultScreen(props) {
           nutricionista para um acompanhamento personalizado.
         </Text>
 
-        <Text>{data.answer1} TIPO: {typeof data.answer1}</Text>
-        <Text>{data.answer2} TIPO: {typeof data.answer2}</Text>
-
         <AppButton
           navigation={navigation}
           buttonTitle="Voltar ao início"
           onPress={() => {
             navigation.navigate("homePage")
-            saveQuestions()
           }}
         />
       </View>
